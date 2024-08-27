@@ -3,83 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAGINATION</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/078d89ff1e.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <title>MONKEY</title>
-
-<body oncontextmenu=" return disableRightClick();">
+</head>
+<body>
+    
     <div class="header">
         <div class="opennav">
-            <span style="cursor:pointer" onclick="openNav()"><i class="fa-regular fa-square-minus fa-xl"></i></span>
-        </div> 
+            <span style="cursor:pointer" onclick="openNav()">&#9776; MENU</span>
+        </div>
         <div class="logo">
-            <h1>MONKEY</h1>
+            <h1>IMAGINATION</h1>
         </div>
     </div>
 
-    <div id="mySidenav" class="sidenav">
+    <nav id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <div class="dropdown-box">
-                <div class="dropdown">
-                    <a href=""><button class="dropbtn">Home</button></a>
-                        <div class="dropdown-content">
-                      
-                        </div>
-                </div>  
-           <div class="dropdown">
-                    <a href=""><button class="dropbtn">Photography</button></a>
-                      <div class="dropdown-content">
-                         
-                          
-                      </div>
-            </div>
-          
-          <div class="dropdown">
-              <a href=""><button class="dropbtn">Cinematography</button></a>
-                  <div class="dropdown-content">
-                      
-                  </div>
-          </div>
-      </div>
-  </div>
+        <ul class="nav-list">
+            <li class="nav-item dropdown">
+                <a href="https://imag1nationlab.github.io/home/" class="dropdown-toggle">Home</a>
+                <ul class="dropdown-menu">
+         
+                   
+                </ul>
+            </li>
+           
+            <li class="nav-item dropdown">
+                <a href="" class="dropdown-toggle">Photography</a>
+                <ul class="dropdown-menu">
+                    <li><a href="https://imag1nationlab.github.io/beauty/">Beauty</a></li>
+                    <li><a href="https://imag1nationlab.github.io/fashion/">Fashion</a></li>
+                    <li><a href="https://imag1nationlab.github.io/foodandbeverage/">F&B</a></li>
+                    <li><a href="https://imag1nationlab.github.io/product/">Products</a></li>
+                </ul>
+            </li>
 
-  
+            <li class="nav-item dropdown">
+                <a href="https://imag1nationlab.github.io/contact/" class="dropdown-toggle">Contact</a>
+                <ul class="dropdown-menu">
+                 
+                </ul>
+            </li>
+            <!-- Add more items as needed -->
+        </ul>
+    </nav>
 
-  
-  <script>
-
-function openNav() {
-  document.getElementById("mySidenav").style.width = "100%";
+<script>
+    function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
 }
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
+</script>
 
-  </script>  
-        <div class="gallery-box">
-            <div class="image-gallery">
-                <a href=""><img src="" alt="">D</a>
-                <div class="h3">Black & White</div>
-            </div>
-            <!-------------------->
-            <div class="image-gallery">
-        
-            </div>
-            <div class="image-gallery">
-               
-            </div>
-            
-        </div>
+<script>
+   document.addEventListener('DOMContentLoaded', () => {
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-menu');
+
+        toggle.addEventListener('click', (e) => {
+            // Only prevent default action if href is empty
+            if (!toggle.getAttribute('href') || toggle.getAttribute('href') === '#') {
+                e.preventDefault();
+                const isOpen = menu.style.display === 'block';
+
+                // Close all dropdown menus
+                document.querySelectorAll('.dropdown-menu').forEach(m => {
+                    m.style.display = 'none';
+                });
+
+                // Toggle the clicked dropdown menu
+                menu.style.display = isOpen ? 'none' : 'block';
+            }
+        });
+    });
+
+    // Close all dropdown menus if clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown-menu').forEach(m => {
+                m.style.display = 'none';
+            });
+        }
+    });
+});
+    </script>
+
+<div class="gallery-box">
+    <div class="image-gallery">
+        <a href="https://imag1nationlab.github.io/black-white/"><img src="https://live.staticflickr.com/65535/53932565417_3b2d249301_k.jpg" alt=""></a>
+        <div class="h3">Black & White</div>
+    </div>
+    <!-------------------->
+    <div class="image-gallery">
+
+    </div>
+    <div class="image-gallery">
+       
+    </div>
+    
 </div>
-     <script> 
-        function disableRightClick() 
-        {  
-        return false; 
-        } 
-    </script> 
+
+
 </body>
 </html>
